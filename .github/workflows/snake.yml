@@ -1,11 +1,8 @@
-# GitHub Action for generating a contribution graph with a snake eating your contributions.
-
 name: Generate Contribution Snake
 
-# Runs every 6 hours
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *"  # every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -13,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Generate Snake
         uses: Platane/snk@v3
